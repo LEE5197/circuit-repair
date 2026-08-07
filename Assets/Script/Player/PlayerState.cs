@@ -159,6 +159,7 @@ public class JumpState : State<Controller>
 		float speedDif = targetSpeed - target.rigid.linearVelocityX;
 		float force = Mathf.Pow(Mathf.Abs(speedDif) * target.acceleration, target.velPower) * Mathf.Sign(speedDif);
 
+		if (Mathf.Sign(target.inputVec.x) == Mathf.Sign(target.rigid.linearVelocityX) && target.rigid.linearVelocityX > target.maxSpeed) return;
 		target.rigid.AddForceX(force);
 	}
 
@@ -573,6 +574,18 @@ public class LedgeGrabState : State<Controller>
 			target.ChangeState("LedgeGrabJump");
 			return;
 		}
+
+		if (!target.render.flipX && !target.onRightWall)
+		{
+			target.ChangeState("Idle");
+			return;
+		}
+		if (target.render.flipX && !target.onLeftWall)
+		{
+			target.ChangeState("Idle");
+			return;
+		}
+
 
 		if (target.inputVec.x == 1) rightInputTime += Time.deltaTime;
 		else rightInputTime = 0f;
