@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7341768648461917317}
   - component: {fileID: 424330533703633289}
   - component: {fileID: 3802152396211195740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Moveing Platform
   m_TagString: Power
   m_Icon: {fileID: 0}

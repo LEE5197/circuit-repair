@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1967176753761358949}
   - component: {fileID: 2789507646580522214}
   - component: {fileID: 2962617445492622500}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Power  Supply Object
   m_TagString: Power
   m_Icon: {fileID: 0}

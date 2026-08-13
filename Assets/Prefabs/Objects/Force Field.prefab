@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8926302555146023056}
   - component: {fileID: 1192886697345657713}
   - component: {fileID: 8343777658322994187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Force Field
   m_TagString: Power
   m_Icon: {fileID: 0}

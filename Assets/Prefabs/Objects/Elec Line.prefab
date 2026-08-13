@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8393864834995877474}
   - component: {fileID: 1750270322868073333}
   - component: {fileID: 5958822659574460981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elec Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,3 +155,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303e63a789d65ae48b27da564ba73444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElecLine
+  startTarget: {fileID: 0}
+  endTarget: {fileID: 0}

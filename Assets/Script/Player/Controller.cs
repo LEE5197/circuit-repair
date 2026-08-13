@@ -13,6 +13,8 @@ public class Controller : MonoBehaviour
 
     public Vector2 mousePos { get; private set; }
 
+    private OutLineShader OutLineShader;
+
 	#region parameter
 	[Header("Movement")]
     public float maxSpeed;
@@ -78,7 +80,7 @@ public class Controller : MonoBehaviour
 	}
 	void Start()
     {
-        
+        OutLineShader = new OutLineShader(render, new MaterialPropertyBlock());
     }
 
     void Update()
@@ -91,6 +93,11 @@ public class Controller : MonoBehaviour
 	{
 
         fsm.FixedUpdate();
+	}
+
+	private void LateUpdate()
+	{
+        OutLineShader.LateUpdate();
 	}
 
 	void OnMove(InputValue value)
