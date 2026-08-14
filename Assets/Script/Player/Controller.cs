@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Controller : MonoBehaviour
 {
@@ -114,6 +115,20 @@ public class Controller : MonoBehaviour
 	{
         mousePos = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
 	}
+
+    private bool check_right_click = false;
+    [Space] public UnityEvent On_Right_Click;
+    void OnRightClick(InputValue value)
+    {
+        if (!value.isPressed)
+        {
+            check_right_click = false;
+            return;
+        }
+        if (value.isPressed&&check_right_click) return;
+        check_right_click = true;
+        On_Right_Click.Invoke();
+    }
 
     private void collCheck()
     {
